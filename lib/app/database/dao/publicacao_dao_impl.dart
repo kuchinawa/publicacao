@@ -24,13 +24,11 @@ class PublicacaoDAOImpl implements PublicacaoDAO {
     );
   }
   Future<Database> _abrirBancoDados() async {
-    //var databasesPath = await getDatabasesPath();
-    String path = join("assets/publicacoes", 'publicacoes.db');
+    var databasesPath = await getDatabasesPath();
+    String path = join(databasesPath, 'banco_posts.db');
     _db = await openDatabase(path, version: 1, onCreate: _onCreate);
     return _db;
   }
-
-
 
   Future<void> _onCreate(Database db, int version) async {
     await db.execute('''
