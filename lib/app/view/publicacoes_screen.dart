@@ -83,7 +83,7 @@ class _PublicacoesScreenState extends State<PublicacoesScreen> {
                   title: Text(publicacao.titulo),
                   subtitle: Text(publicacao.conteudo),
                   leading: publicacao.imagem != null
-                      ? Image.memory(publicacao.imagem)
+                      ? Image.memory(publicacao.imagem!)
                       : Icon(Icons.image_not_supported),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
